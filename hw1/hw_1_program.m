@@ -42,6 +42,7 @@ D = inv(A' * A) * b;
 E = 0;
 for i = 1:m
     for j = 1:n
+% comment: take a careful look at the assignment, you calculate the wrong sum it should have been A(i,j)*b(i)
         E = E + A(i,j) * b(j);
     end
 end
@@ -99,3 +100,5 @@ prod_est = X * beta;
 
 % Compute standard errors
 stand_er = prod - prod_est;
+% This is not standard errors, these are residuals and you don't print out
+% the betas ans standard errors
