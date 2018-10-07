@@ -22,6 +22,10 @@ p_ini = [1;1];
 % Call Broyden
 addpath /Users/YinshiG/Desktop/'Econ 512'/Lectures/CEtools
 
+% use relative path to functions. I have a very different path on my
+% computer. use addpath ../compecon/CEtools for example if compecon is one
+% folder up.
+
 tic % calculate the execution time for comparison in Problem_3
 [x,fval,flag,it,fjacinv] = broyden(@(p) bertrand_foc(p,v),p_ini);
 T_boyden = toc;
@@ -57,6 +61,7 @@ p_ini = [1;1];
 tic
 p_nash3 = update(p_ini, v);
 T_update = toc;
+% be sure to pring all the results in command line so that I can see them
 
 
 %% Problem_5
