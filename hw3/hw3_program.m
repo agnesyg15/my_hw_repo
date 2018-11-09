@@ -66,6 +66,9 @@ beta0 = [0,0,0,0,0,0]'; % not optimal
 % another local minimum. Now, test Problem 4 with initial value of beta2,
 % which is the optimal result get from Problem 1 and 2.
 
+% But you also use another model. it is NLS instead of MLE, that is
+% expected that those estimates are different.
+
 beta0 = beta2; % the result is pretty the same with those in Problem 3
 [beta5] = fminsearch(fun3,beta0,options)
 
