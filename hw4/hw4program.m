@@ -3,6 +3,9 @@
 %% Problem 1 Using Quasi-Monto Carlo
 % Define indicator function
 f = @(x,y) double((x.^2 + y.^2 <= 1))
+% you didn't need to define a function, it's all defined for you already.
+% check the answer key
+
 
 % Use `N'eiderrieter, 'W'eyl and 'H'aber points do the 1000 draw
 addpath ('../CETools');
@@ -19,6 +22,8 @@ f_1 = @(x) double(x.^2 + y.^2<=1)
 
 % Cut y-axis and get 1000 points
 Y = linspace(0,1,1000);
+% I am not sure that is equivalent to Newton Conton method. there is a
+% function in compecon that generates the draws for you 
 fval1 = []; % try to evaluate intergration of f_1 given each y value
 for i = 1:size(Y,2)
     y = Y(i);
