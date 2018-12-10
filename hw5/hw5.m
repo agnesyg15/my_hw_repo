@@ -35,6 +35,7 @@ load('hw5.mat');
 N = data.N;
 T = data.T;
 n = 100; % number of nodes used in Monte Carlo
+% Typically MC needs many more draws
 beta0 = 0.1;
 sig_beta = 1;
 gamma = 0;
@@ -84,7 +85,10 @@ A = [0,0,0,0,0,0;
     0,0,0,0,0,0];
 b = [0;0;0;0;0;0];
 
-[para3, min3] = fmincon(@MC2, para, A, b)
+[para3, min3] = fmincon(@MC2, para, A, b);
+
+% This does not seem to proceed far from the initial point and the result
+% changes from run to run.
 
 % para3 =
 
