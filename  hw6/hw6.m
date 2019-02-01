@@ -42,6 +42,10 @@ xlabel('Initial stock level')
 ylabel('Firm value')
 title('Firm value when current price p = 0.9')
 
+% add hold on to plot multiple graphs on the same figure
+hold on
+
+
 % when current p = 1
 x = 0 : S;
 plot(x, V(11,:))
@@ -62,6 +66,8 @@ mesh(m,n,X')
 xlabel('current price')
 ylabel('stock level')
 zlabel('harvest amount')
+
+% You need to try more discrete grid, this one looks too coarse
 
 %% Q.5 Firms starts with stock 100 and price 1, expected stock over time for 20 periods
 
@@ -86,7 +92,8 @@ plot(t, Stock_exp)
 xlabel('t period')
 ylabel('Expected stock level')
 
-
+% the shape is wrong, how come it's increasing sometimes? trees don't grow,
+% remember?
 
 %% Q.6 Redo 2-4 for coarse grid of 5 points in Tauchen's representation
 
